@@ -1,0 +1,69 @@
+name: Bug report
+description: Report something that is not working as expected.
+labels: ["type: bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please search existing issues first.
+        **Never paste secrets** (tokens, DSNs, passwords) or personal data in this form.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click on ...
+        3. See error
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: e.g. v0.1.0 or commit hash
+    validations:
+      required: true
+  - type: input
+    id: moodle-version
+    attributes:
+      label: Moodle version
+      placeholder: e.g. 5.3.1 (Build 20261020)
+    validations:
+      required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: e.g. 8.3.14
+    validations:
+      required: true
+  - type: dropdown
+    id: database
+    attributes:
+      label: Database
+      options:
+        - PostgreSQL
+        - MariaDB
+        - MySQL
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or debug output
+      description: Enable developer debugging if possible. This will be rendered as code.
+      render: shell
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Screenshots, environment (Docker, Kubernetes, load balancer), cache stores, etc.

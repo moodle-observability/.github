@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Moodle Observability organization
+    url: https://github.com/moodle-observability
+    about: Overview of all plugins and the roadmap.
