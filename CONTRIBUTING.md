@@ -55,6 +55,8 @@ You can also run the GitHub Actions workflow locally with [act](https://github.c
 
 Every repository runs `moodle-plugin-ci` on GitHub Actions for each push and pull request, with a matrix of supported Moodle branches (5.3+), PHP versions and databases (PostgreSQL, MariaDB). Pull requests are merged only when all checks pass.
 
+The standard workflow is the organization template [`workflow-templates/moodle-plugin-ci.yml`](workflow-templates/moodle-plugin-ci.yml) (offered in *Actions > New workflow* of every repository). Copy it to `.github/workflows/ci.yml` and keep the job id `test`: the release scripts look for check runs named `test (...)`.
+
 ## Reporting security issues
 
 Please **do not** open public issues for security vulnerabilities. Use GitHub's [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) on the affected repository instead.

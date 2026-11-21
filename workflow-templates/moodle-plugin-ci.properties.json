@@ -1,0 +1,7 @@
+{
+  "name": "Moodle Plugin CI (Moodle Observability)",
+  "description": "Standard CI for Moodle Observability plugins: moodle-plugin-ci on Moodle 5.3+, PHP 8.3/8.4, PostgreSQL and MariaDB.",
+  "iconName": "octicon check-circle",
+  "categories": ["PHP"],
+  "filePatterns": ["version.php$"]
+}
