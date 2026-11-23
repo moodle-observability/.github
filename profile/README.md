@@ -13,13 +13,13 @@ All plugins target **Moodle 5.3 and later** and are released under the **GPL-3.0
 | [moodle-tool_taskmonitor](https://github.com/moodle-observability/moodle-tool_taskmonitor) | Alerts when cron stops or tasks keep failing, with a task health report and an extension point for other alert channels. | 🛠️ 0.1.0 (alpha) |
 | [moodle-tool_healthcheck](https://github.com/moodle-observability/moodle-tool_healthcheck) | Liveness and readiness endpoints for Kubernetes probes and load balancers, with checks contributed by other plugins. | 🛠️ 0.1.0 (alpha) |
 | [moodle-tool_otel](https://github.com/moodle-observability/moodle-tool_otel) | Distributed tracing with [OpenTelemetry](https://opentelemetry.io): request, web service and task spans exported via OTLP. | 🛠️ 0.1.0 (alpha) |
-| [moodle-tool_opensearch](https://github.com/moodle-observability/moodle-tool_opensearch) | [OpenSearch](https://opensearch.org) base for Moodle plugins: connection, queue, bulk shipping, data streams with retention and metrics. | 📐 Planning |
+| [moodle-tool_opensearch](https://github.com/moodle-observability/moodle-tool_opensearch) | [OpenSearch](https://opensearch.org) base for Moodle plugins: connection, queue, bulk shipping, data streams with retention and metrics. | 🛠️ 0.1.0 (alpha) |
 | [moodle-logstore_opensearch](https://github.com/moodle-observability/moodle-logstore_opensearch) | Log store that writes Moodle events to OpenSearch: the same fields as the standard log, or xAPI statements, each in its own data stream. | 📐 Planning |
 
 ## Roadmap
 
-1. **Done:** 0.1.0 (alpha) of `tool_prometheus`, `tool_taskmonitor`, `tool_healthcheck` and `tool_otel`, and alignment of `tool_sentry` with the organization CI standard.
-2. **`tool_opensearch` and `logstore_opensearch`:** OpenSearch base first, then the log store in `standard` mode (same fields as Moodle) and later in `xapi` mode.
+1. **Done:** 0.1.0 (alpha) of `tool_prometheus`, `tool_taskmonitor`, `tool_healthcheck`, `tool_otel` and `tool_opensearch`, and alignment of `tool_sentry` with the organization CI standard.
+2. **`logstore_opensearch`:** the log store in `standard` mode (same fields as Moodle) on top of `tool_opensearch` 0.1.0, and later in `xapi` mode.
 3. **Core proposals** to unblock database query and outgoing HTTP spans in `tool_otel`.
 4. **Publication** of each plugin in the [Moodle Plugins directory](https://moodle.org/plugins) once stable.
 
