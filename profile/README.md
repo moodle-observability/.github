@@ -9,19 +9,21 @@ All plugins target **Moodle 5.3 and later** and are released under the **GPL-3.0
 | Plugin | Description | Status |
 | :--- | :--- | :--- |
 | [moodle-tool_sentry](https://github.com/moodle-observability/moodle-tool_sentry) | Sends Moodle errors and performance data to [Sentry](https://sentry.io) (self-hosted or cloud). Available in the [Moodle Plugins directory](https://moodle.org/plugins/tool_sentry). | ✅ Stable |
-| [moodle-tool_prometheus](https://github.com/moodle-observability/moodle-tool_prometheus) | Exposes platform metrics (active users, task queues, quiz attempts, cache, disk) in OpenMetrics format for [Prometheus](https://prometheus.io). | 🛠️ Planned (MVP) |
-| [moodle-tool_taskmonitor](https://github.com/moodle-observability/moodle-tool_taskmonitor) | Monitors cron and scheduled/adhoc tasks, records durations and failures, and alerts administrators. | 🛠️ Planned (MVP) |
-| [moodle-tool_healthcheck](https://github.com/moodle-observability/moodle-tool_healthcheck) | Liveness and readiness endpoints for Kubernetes probes and load balancers. | 🛠️ Planned (MVP) |
-| [moodle-tool_otel](https://github.com/moodle-observability/moodle-tool_otel) | Distributed tracing with [OpenTelemetry](https://opentelemetry.io), exported via OTLP. | 🔬 Research (backlog) |
+| [moodle-tool_prometheus](https://github.com/moodle-observability/moodle-tool_prometheus) | Exposes platform metrics (active users, sessions, task queues, quiz attempts, cache stores, disk) for [Prometheus](https://prometheus.io), with an extension point for other plugins. | 🛠️ 0.1.0 (alpha) |
+| [moodle-tool_taskmonitor](https://github.com/moodle-observability/moodle-tool_taskmonitor) | Alerts when cron stops or tasks keep failing, with a task health report and an extension point for other alert channels. | 🛠️ 0.1.0 (alpha) |
+| [moodle-tool_healthcheck](https://github.com/moodle-observability/moodle-tool_healthcheck) | Liveness and readiness endpoints for Kubernetes probes and load balancers, with checks contributed by other plugins. | 🛠️ 0.1.0 (alpha) |
+| [moodle-tool_otel](https://github.com/moodle-observability/moodle-tool_otel) | Distributed tracing with [OpenTelemetry](https://opentelemetry.io): request, web service and task spans exported via OTLP. | 🛠️ 0.1.0 (alpha) |
+| [moodle-tool_opensearch](https://github.com/moodle-observability/moodle-tool_opensearch) | [OpenSearch](https://opensearch.org) base for Moodle plugins: connection, queue, bulk shipping, data streams with retention and metrics. | 📐 Planning |
+| [moodle-logstore_opensearch](https://github.com/moodle-observability/moodle-logstore_opensearch) | Log store that writes Moodle events to OpenSearch: the same fields as the standard log, or xAPI statements, each in its own data stream. | 📐 Planning |
 
 ## Roadmap
 
-1. **v0.1.0 – MVP** for `tool_prometheus`, `tool_taskmonitor` and `tool_healthcheck`: plugin scaffold, CI with `moodle-plugin-ci`, core features, PHPUnit tests and documentation.
-2. **Alignment of `tool_sentry`** with the organization CI standard.
-3. **`tool_otel` spike**: evaluate the OpenTelemetry PHP SDK with the Moodle bootstrap before committing to an MVP.
+1. **Done:** 0.1.0 (alpha) of `tool_prometheus`, `tool_taskmonitor`, `tool_healthcheck` and `tool_otel`, and alignment of `tool_sentry` with the organization CI standard.
+2. **`tool_opensearch` and `logstore_opensearch`:** OpenSearch base first, then the log store in `standard` mode (same fields as Moodle) and later in `xapi` mode.
+3. **Core proposals** to unblock database query and outgoing HTTP spans in `tool_otel`.
 4. **Publication** of each plugin in the [Moodle Plugins directory](https://moodle.org/plugins) once stable.
 
-Track progress in each repository's issues and in the `v0.1.0 – MVP` milestone.
+Track progress in the issues of each repository.
 
 ## Contributing
 
